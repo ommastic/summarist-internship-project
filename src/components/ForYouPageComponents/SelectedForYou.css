@@ -1,0 +1,70 @@
+.selected-book__wrapper {
+  margin-top: 20px;
+}
+.selected-for-you {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.book--info {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  width: 60%;
+} 
+
+.book--line{
+  background-color: rgb(186, 200, 206);
+  color: rgb(0,0,0);
+  height: 140px;
+  width: 2px;
+}
+
+.book__background {
+  background-color: rgb(251, 239, 214);
+  display: flex;
+  padding: 24px;
+  border-radius: 4px;
+  gap: 24px;
+  text-decoration: none;
+  justify-content: space-between;
+  color:rgb(0,0,0);
+
+}
+.subtitle__section{
+  display: flex;
+  width: 40%;
+  gap: 24px;
+  
+}
+.book__image {
+  width: 140px;
+  height: auto;
+  margin-bottom: 15px;
+}
+.book__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.book__description{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.book__author {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+.book__audio-link {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+.book__audio-link:hover {
+  text-decoration: underline;
+}
