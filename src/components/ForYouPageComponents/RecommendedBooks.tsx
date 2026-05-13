@@ -1,17 +1,17 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {type Book} from '../../types/Book';
-import './SelectedForYou.css';
+import axios from "axios";
+import { useState, useEffect } from "react";
+import {type Book} from '../../types/Book'
+import { Link } from "react-router-dom";
 
-export default function SelectedForYou() {
-  const [book, setBook] = useState<Book | null>(null);
+
+export default function RecommendedBooks(){
+  const [books, setBooks] = useState<Book[] | null>(null)
 
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await axios.get('https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected');
-        setBook(response.data[0]);
+        const response = await axios.get('https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended');
+        setBooks(response.data[0]);
       } catch (error) {
         console.error('Error fetching book:', error);
       }
@@ -20,12 +20,15 @@ export default function SelectedForYou() {
     fetchBook();
   }, []);
 
-  if (!book) {
+  if (!books) {
     return <p>Loading...</p>;
   };
+
   return (
-    <div className='selected-book__wrapper'>
-      <p className="selected-for-you">Selected for you</p>
+    books.map((book) => {
+      <div className='recommended-book__wrapper'>
+      <div className="recommended__title">Recommended For You</div>
+      <p className='recommended__sub-title'>We think you'll like these</p>
       <Link to={`/book/${book.id}`} className='book__background'>
         <div className='subtitle__section'>
           <div className='book__sub-title'>{book.subTitle}</div>
@@ -43,5 +46,6 @@ export default function SelectedForYou() {
         </div>
       </Link>
     </div>
-  );
+    })
+  )
 }
