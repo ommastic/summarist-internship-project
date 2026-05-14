@@ -1,9 +1,9 @@
-import Features from "../components/HomeComponents/Features";
-import Footer from "../components/HomeComponents/Footer";
-import Header from "../components/HomeComponents/Header";
-import Landing from "../components/HomeComponents/Landing";
-import Rating from "../components/HomeComponents/Rating";
-import Reviews from "../components/HomeComponents/Reviews";
+import Features from "../components/homeComponents/Features";
+import Footer from "../components/homeComponents/Footer";
+import Header from "../components/homeComponents/Header";
+import Landing from "../components/homeComponents/Landing";
+import Rating from "../components/homeComponents/Rating";
+import Reviews from "../components/homeComponents/Reviews";
 import './HomePage.css';
 
 

@@ -26,22 +26,23 @@ export default function RecommendedBooks() {
   };
 
   return (
-    <>
+    <div className='recommended-for-you__wrapper'>
       <div className="recommended__title">Recommended For You</div>
       <p className='recommended__sub-title'>We think you'll like these</p>
-      <div className="recommended=grid">
+      <div className="recommended-grid">
       {books.slice(0,5).map((book) => (
         <div key={book.id} className='recommended-book__wrapper'>
-          <Link to={`/book/${book.id}`} className='book__background'>
+          <Link to={`/book/${book.id}`} className='recommended-book'>
             <div className='recommended__book--section'>
-              <div>
-                <img className='book__image' src={book.imageLink} />
-                <div className='book__title'>{book.title}</div>
-                <div className='book__author'>{book.author}</div>
-                <div className='book__sub-title'>{book.subTitle}</div>
+              {book.subscriptionRequired && <div className='subscription__notification'>Premium</div>}
+              <div className="recommended-book__detail">
+                <img className='recommended-book__image' src={book.imageLink} />
+                <div className='recommended-book__title'>{book.title}</div>
+                <div className='recommended-book__author'>{book.author}</div>
+                <div className='recommended-book__sub-title'>{book.subTitle}</div>
                 <div>
-                  <div className='book__audio-link'>{ }</div>
-                  <div className='recommended__book--rating'>{ }</div>
+                  <div className='recommended-book__audio-link'>{ }</div>
+                  <div className='recommended-book--rating'>{ }</div>
                 </div>
               </div>
             </div>
@@ -49,6 +50,6 @@ export default function RecommendedBooks() {
           </div>
       ))}
       </div>
-    </>
+    </div>
   )
 }

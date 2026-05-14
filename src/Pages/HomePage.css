@@ -1,3 +1,7 @@
+.selected-for-you__page{
+  display: flex;
+}
+
 .row {
   max-width: 1070px;
   width: 100%;

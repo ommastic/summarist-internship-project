@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logo from '..Link ssets/logo.png';
+import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
 

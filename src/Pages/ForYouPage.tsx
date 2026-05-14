@@ -1,16 +1,18 @@
-import SelectedForYou from '../components/ForYouPageComponents/SelectedForYou';
-import RecommendedBooks from '../components/ForYouPageComponents/RecommendedBooks';
+import SelectedForYou from '../components/forYouPageComponents/SelectedForYou';
+import RecommendedBooks from '../components/forYouPageComponents/RecommendedBooks';
+import SuggestedBooks from '../components/forYouPageComponents/SuggestedBooks';
+import './ForYouPage.css'
+// import Sidebar from '../components/Sidebar'
 
 export default function ForYouPage() {
   return (
-    <section>
-      <div className='row'>
-        <div className='container'>
-          <SelectedForYou/>
-          <RecommendedBooks />
-        </div>
-      </div>
-    </section>
+    <div className='selected-for-you__page'>
+      {/* <Sidebar /> */}
+      <main className='row for-you__wrapper'>
+      <SelectedForYou />
+      <RecommendedBooks />
+      <SuggestedBooks />
+      </main>
+    </div>
   );
 }
-    
