@@ -1,4 +1,5 @@
 .recommended-for-you__wrapper{
+  margin-top: 32px;
   margin-bottom: 32px;
 }
 .recommended__title {
@@ -24,19 +25,21 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 32px;
-  max-width: 200px;
 }
 
 .recommended-book {
+  position: relative;
   text-decoration: none;
-  background-color: rgb(247, 250, 249);
   display: flex;
   padding: 32px 12px 12px 12px;
   border-radius: 4px;
   text-decoration: none;
   justify-content: space-between;
   color: rgb(0, 0, 0);
-  height: 335px;
+}
+
+.recommended-book:hover{
+  background-color: rgb(247, 250, 249);
 }
 
 .recommended-book .book__image {
@@ -45,7 +48,7 @@
 }
 
 .recommended-book__detail{
-    padding: 32px 12px 12px, 12px;
+    padding: 32px 12px 12px 12px;
     
 }
 
@@ -77,3 +80,14 @@
   margin-bottom: 8px;
 }
 
+.subscription__notification{
+  position: absolute;
+  top: 2px;
+  right: 2px ;
+  font-size: 10px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  padding: 6px;
+  border-radius: 20px;
+}

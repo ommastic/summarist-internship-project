@@ -2,6 +2,7 @@ import HomePage from './Pages/HomePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import ForYouPage from './Pages/ForYouPage';
+import InsideBookPage from './Pages/InsideBookPage';
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/for-you" element={<ForYouPage />} />
+        <Route path="/book/:id" element={<InsideBookPage />}/>
       </Routes>
     </Router>
   );
