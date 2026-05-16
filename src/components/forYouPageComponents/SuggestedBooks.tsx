@@ -16,7 +16,6 @@ export default function SuggestedBooks() {
   },[]);
   
   if(!books)return <p>Loading...</p>;
-  console.log(books)
 
   return (
     <>
