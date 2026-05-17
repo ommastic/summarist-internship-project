@@ -1,0 +1,141 @@
+.inside-book--section{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 16px;
+  align-items: start;
+  margin: 16px;
+}
+
+.inside-book__image{
+  height: 300px;
+  width: 300px;
+}
+
+.inside-book__title{
+  color: rgb(3, 43, 65);
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+
+}
+
+
+.inside-book__author{
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.inside-book--line{
+  flex: 1;
+  height: 1px;
+  background-color: rgb(225, 231, 234);
+ 
+}
+.line--gap{
+  margin-bottom: 24px;
+}
+
+.inside-book__sub-title{
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+ 
+.ratings__audio{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 12px;
+  align-items: flex-start;
+  margin: 16px 0;
+}
+
+.ratings__player{
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 24px;
+}
+
+.inside-book--rating{
+  font-size: 14px;
+  font-weight: 500;
+  gap: 24px;
+  width: 200px;
+}
+
+.main_key--ideas{
+  width: 200px;
+}
+
+.audio__key-ideas{
+  display: flex;
+  gap: 24px;
+}
+
+.inside-book__button, .inside-book__listen{
+  border: 1px solid rgb(3,43,65);
+  font-weight: 400;
+  padding: 10px 28px;
+  font-size: 16px;
+  background-color: rgb(3,43,65);
+  border-radius: 4px;
+  color: white;
+}
+.book_color, .microphone__details{
+  margin-right: 6px;
+  
+}
+.inside-book__with-average-rating{
+  width: 200px;
+}
+
+.inside-book__listen{
+  margin-left: 20px;
+}
+
+.read__listen--button{
+  margin-bottom: 24px;
+}
+
+.inside-book--note{
+  color: rgb(3, 101, 242);
+  font-size: 18px;
+  font-weight: 500;
+  column-gap: 8px;
+  margin-bottom: 40px;
+}
+
+.inside-book__description{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.inside-book__description--details{
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.inside-book-tags{
+  border: 1px solid  rgb(241, 246, 244);
+  gap: 16px;;
+  border-radius: 4px;
+  background-color: rgb(241, 246, 244);
+  gap: 16px;
+  padding: 12px;
+}
+
+.inside-book__details{
+  display: block;
+  line-height: 24px;
+  margin-bottom: 16px;
+  
+}
+
+.inside-book__author-info{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
