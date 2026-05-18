@@ -19,6 +19,9 @@
 
 }
 
+.bookmark-logo{
+  margin-right: 6px;
+}
 
 .inside-book__author{
   font-size: 16px;
@@ -90,6 +93,9 @@
   width: 200px;
 }
 
+.inside-book__average-rating{
+  margin: 0 6px;
+}
 .inside-book__listen{
   margin-left: 20px;
 }
@@ -112,6 +118,9 @@
   margin-bottom: 16px;
 }
 
+.microphone-logo{
+  margin-right: 6px;
+}
 .inside-book__description--details{
   display: flex;
   gap: 16px;

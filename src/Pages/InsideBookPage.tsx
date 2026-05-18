@@ -1,13 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { type Book } from "../types/Book";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import './InsideBook.css';
+import './InsideBookPage.css';
 
 
 export default function InsideBookPage() {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [book, setBook] = useState<Book | null>(null);
 
     useEffect(() => {
@@ -33,13 +34,13 @@ export default function InsideBookPage() {
                             <div className="ratings__player">
                                 <div className="inside-book__with-average-rating">
                                     <FontAwesomeIcon icon="star" />
-                                    <span className='inside-book__rating'>{book.averageRating}</span>
+                                    <span className='inside-book__average-rating'>{book.averageRating}</span>
                                     <span>({book.totalRating} ratings)</span>
                                 </div>
                                 <div>TimerStuff</div>
                             </div>
                             <div className='audio__key-ideas'>
-                                <div className='inside-book--rating'> <FontAwesomeIcon icon="microphone" />{book.type}</div>
+                                <div className='inside-book--rating'> <FontAwesomeIcon className='microphone-logo' icon="microphone" />{book.type}</div>
 
                                 <div className='main_key--ideas'>{book.keyIdeas} Key ideas</div>
 
@@ -48,15 +49,15 @@ export default function InsideBookPage() {
                         <div>
                             <div className='inside-book--line line--gap'></div>
                             <div className="read__listen--button">
-                                <button className='inside-book__button'><FontAwesomeIcon className="book_color" icon='book-open' />Read</button>
+                                <button className='inside-book__button' onClick={() => navigate(`/player/${book.id}`)}><FontAwesomeIcon className="book_color" icon='book-open' />Read</button>
                                 <button className='inside-book__listen'><FontAwesomeIcon className="microphone__details" icon="microphone" />Listen</button>
                             </div>
                         </div>
                         </div>
-                        <p className='inside-book--note'>Add title to My Library</p>
+                        <p className='inside-book--note'><FontAwesomeIcon className='bookmark-logo' icon='bookmark'/>Add title to My Library</p>
                         <p className='inside-book__description'>What's it about?</p>
                         <div className='inside-book__description--details'>
-                            {book.tags.map(tag => <div className='inside-book-tags'>{tag}</div>)}
+                            {book.tags.map((tag, index) => (<div key={index} className='inside-book-tags'>{tag}</div>))}
                         </div>
                         <div className="inside-book__details">{book.bookDescription}</div>
                         <div className='inside-book__author-info'>About the author</div>
