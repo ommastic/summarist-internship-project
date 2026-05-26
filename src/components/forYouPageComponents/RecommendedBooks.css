@@ -12,11 +12,11 @@
   margin-bottom: 16px;
   font-size: 16px;
   color: rgb(57, 69, 71);
+  font-weight: 300;
 }
 
 .recommended-book__sub-title {
   color: rgb(57, 69, 71);
-  font-weight: 300;
   font-size: 14px;
   margin-bottom: 8px;
 }
@@ -35,7 +35,7 @@
   border-radius: 4px;
   text-decoration: none;
   justify-content: space-between;
-  color: rgb(0, 0, 0);
+  color: rgb(107, 117, 123);
 }
 
 .recommended-book:hover{

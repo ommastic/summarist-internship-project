@@ -1,11 +1,12 @@
 import './Login.css';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, } from "firebase/auth";
 import { auth } from '../../firebase';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import google from '../../assets/google.png';
 import { useNavigate } from 'react-router-dom';
 import { FirebaseError } from 'firebase/app';
+import { LiaTimesSolid } from "react-icons/lia";
+import { FaUser } from "react-icons/fa";
 
 
 
@@ -59,9 +60,9 @@ export default function Login({ setIsLoginOpen }: { setIsLoginOpen: (isOpen: boo
         <div className="modal__overlay">
           <div className='modal'>
             <div className="modal__content">
-              <button className='close__button' onClick={() => setIsLoginOpen(false)}>{<FontAwesomeIcon icon="times" />}</button>
+              <button className='close__button' onClick={() => setIsLoginOpen(false)}>{<LiaTimesSolid className='close-button--logo'/>}</button>
               <p className='login__title'>Log in to Summarist</p>
-              <button className='guest__button'>{<FontAwesomeIcon icon="user" className='user-logo' />}Login as LinkGuest</button>
+              <button className='guest__button' onClick={() => navigate('/for-you')}>{<FaUser className='user-logo' />}Login as Guest</button>
               <div className="login__divider">
                 <div className='login__line'></div>
                 <span>or</span>
@@ -104,7 +105,7 @@ export default function Login({ setIsLoginOpen }: { setIsLoginOpen: (isOpen: boo
             </div>
             <div className="login__footer">
               <button className="forgot__password" onClick={() => setMode('forgot-password')}>
-                Forgot your Password?
+                Forgot your password?
               </button>
               <button className="signup__link" onClick={() => setMode('signup')}>
                 Don't have an account?
@@ -119,7 +120,7 @@ export default function Login({ setIsLoginOpen }: { setIsLoginOpen: (isOpen: boo
           <div className="modal__overlay">
             <div className='modal'>
               <div className="modal__content">
-                <button className='close__button' onClick={() => setIsLoginOpen(false)}><FontAwesomeIcon icon="fax" /></button>
+                <button className='close__button' onClick={() => setIsLoginOpen(false)}><img className="google__logo" src={google} alt="Google Logo" /></button>
                 <p className='login__title'>Sign up for Summarist</p>
                 <button className='google__button'>Sign up with Google</button>
                 <div className="login__divider">
@@ -164,7 +165,7 @@ export default function Login({ setIsLoginOpen }: { setIsLoginOpen: (isOpen: boo
             <div className="modal__overlay">
               <div className='modal'>
                 <div className="modal__content">
-                  <button className='close__button' onClick={() => setIsLoginOpen(false)}><FontAwesomeIcon icon="times" /></button>
+                  <button className='close__button' onClick={() => setIsLoginOpen(false)}><LiaTimesSolid/></button>
                   <p className='login__title'>Reset Your Password</p>
                   <form className="login__form">
                     <input

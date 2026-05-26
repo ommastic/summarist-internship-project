@@ -34,6 +34,11 @@
   font-size: 28px;
   color: #394547;
 }
+.close-button--logo{
+  height: 28px;
+  width: 28px;
+  font-weight: bold;
+}
 
 .login__title {
   font-size: 20px;
@@ -136,8 +141,9 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 12px;
-  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 300;
+  font-size: 14px;
 
   color: rgb(66, 133, 244);
 }
@@ -147,5 +153,9 @@
   color: rgb(66, 133, 244);
   background-color: rgb(241, 246, 244);
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
+  font-stretch: 100%;
+  font-weight: 300;
+  height: 40px;
+  width: 400px;
 }

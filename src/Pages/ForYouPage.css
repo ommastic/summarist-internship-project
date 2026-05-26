@@ -1,4 +1,11 @@
+
+.selected-for-you__page{
+  display: flex;
+}
+
 .for-you__wrapper{
   margin-top: 40px;
   margin-bottom: 40px;
+  flex: 1;
 }
+
