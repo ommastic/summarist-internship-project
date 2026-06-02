@@ -1,7 +1,13 @@
 .selected-book__wrapper {
-  margin-top: 20px;
   margin-bottom: 24px;
+  width: calc(100% - 340px);
 }
+
+.selected-book__container{
+  display: flex;
+  justify-content: flex-start;
+}
+
 .selected-for-you {
   font-size: 22px;
   font-weight: 700;
@@ -13,7 +19,8 @@
   gap: 24px;
   height: 140px;
   align-items: flex-start;
-  width: 60%;
+  flex: 1;
+ 
 } 
 
 .book--line{
@@ -25,26 +32,33 @@
 
 .book__background {
   background-color: rgb(251, 239, 214);
-  width: 67%;
   display: flex;
+  gap: 24px;
   padding: 24px;
   border-radius: 4px;
-  gap: 24px;
   text-decoration: none;
-  justify-content: space-between;
-  color:rgb(0,0,0);
+  justify-content: flex-start;
+}
 
+@media(max-width: 768px){
+  .selected-book__wrapper {
+    width: 100%;
+  }
+  .book__background{
+    width: 100%;
+  }
 }
 .subtitle__section{
   display: flex;
-  width: 45%;
+  width: 40%;
   gap: 24px;
-  
 }
+
 .book__image {
   width: 140px;
   height: 140px;
 }
+
 .book__title {
   font-size: 16px;
   font-weight: bold;
@@ -57,6 +71,7 @@
   justify-content: start;
   align-items: start;
 }
+
 .book__author {
   font-size: 14px;
   color: #666;
@@ -67,6 +82,7 @@
   color: #007bff;
   text-decoration: none;
 }
+
 .book__audio-link:hover {
   text-decoration: underline;
 }
@@ -74,5 +90,4 @@
 .book__sub-title{
   color: 032B41;
   height: 140px;
-  
 }

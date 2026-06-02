@@ -35,7 +35,7 @@ export default function SuggestedBooks() {
                 <div className='recommended-book__sub-title'>{book.subTitle}</div>
                 <div>
                   <div className='recommended-book__audio-link'>{ }</div>
-                  <div className='recommended-book--rating'>{ }</div>
+                  <div className='recommended-book--rating'></div>
                 </div>
               </div>
             </div>

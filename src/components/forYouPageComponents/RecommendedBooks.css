@@ -23,8 +23,8 @@
 
 .recommended-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  column-gap: 32px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: 16px;
 }
 
 .recommended-book {

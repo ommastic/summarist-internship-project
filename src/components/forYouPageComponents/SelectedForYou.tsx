@@ -25,11 +25,11 @@ export default function SelectedForYou() {
   };
   return (
     <div className='selected-book__wrapper'>
-      <p className="selected-for-you">Selected for you</p>
+      <p className="selected-for-you">Selected just for you</p>
       <Link to={`/book/${book.id}`} className='book__background'>
         <div className='subtitle__section'>
           <div className='book__sub-title'>{book.subTitle}</div>
-          <div className='book--line'></div>
+          <div className='book--line'></div>  
         </div>
         <div className='book--info'>
           <div>
