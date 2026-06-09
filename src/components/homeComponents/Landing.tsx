@@ -1,7 +1,14 @@
 import landing from '../../assets/landing.png';
+import Login from './Login';
+
+type LandingProps = {
+  isLoginOpen: boolean;
+  setIsLoginOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 
-export default function Landing(){
+export default function Landing({isLoginOpen, setIsLoginOpen}: LandingProps) {
+ 
     return (
       <section id="landing">
       <div className="container">
@@ -19,7 +26,8 @@ export default function Landing(){
                 <br className="remove--tablet" />
                 and even people who don’t like to read.
               </div>
-              <button className="btn home__cta--btn">Login</button>
+              {isLoginOpen && <Login  setIsLoginOpen={setIsLoginOpen} />}
+              <button className="btn home__cta--btn" onClick={() => setIsLoginOpen(true)}>Login</button>
             </div>
             <figure className="landing__image--mask">
               <img src={landing} alt="landing" />

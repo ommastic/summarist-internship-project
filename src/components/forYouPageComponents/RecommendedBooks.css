@@ -23,13 +23,14 @@
 
 .recommended-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(5, 196px);
   column-gap: 16px;
 }
 
 .recommended-book {
   position: relative;
   text-decoration: none;
+  max-width: 200px;
   display: flex;
   padding: 32px 12px 12px 12px;
   border-radius: 4px;

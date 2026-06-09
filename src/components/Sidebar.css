@@ -1,5 +1,9 @@
 .sidebar{
   background-color: rgb(247, 250, 249);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
   min-width: 200px;
   max-height: 100vh;  
   z-index: 1000;
@@ -27,6 +31,11 @@
   padding: 24px 0;
 }
 
+.highlights, 
+.search{
+ cursor: not-allowed;
+}
+
 .sidebar-button{
   display: flex;
   align-items: center;
@@ -42,6 +51,10 @@
 .sidebar-logo{
   height: 24px;
   width: 24px;
+  color: rgb(3, 43, 65);
+}
+.sidebar-button-text{
+  font-size: 16px;
   color: rgb(3, 43, 65);
 }
 

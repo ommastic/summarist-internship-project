@@ -1,5 +1,5 @@
 import './Login.css';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInAnonymously} from "firebase/auth";
 import { auth } from '../../firebase';
 import { useState } from 'react';
 import google from '../../assets/google.png';
@@ -42,10 +42,13 @@ export default function Login({ setIsLoginOpen }: { setIsLoginOpen: (isOpen: boo
     };
   };
 
-  // const logout = async () => {
-  //   await signOut(auth);
-  // };
+  const loginAsGuest = async () => {
+      await signInAnonymously(auth);
+      setIsLoginOpen(false);  
+      navigate('/for-you');
+    };
 
+  
   const getEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
@@ -62,7 +65,7 @@ export default function Login({ setIsLoginOpen }: { setIsLoginOpen: (isOpen: boo
             <div className="modal__content">
               <button className='close__button' onClick={() => setIsLoginOpen(false)}>{<LiaTimesSolid className='close-button--logo'/>}</button>
               <p className='login__title'>Log in to Summarist</p>
-              <button className='guest__button' onClick={() => navigate('/for-you')}>{<FaUser className='user-logo' />}Login as Guest</button>
+              <button className='guest__button' onClick={loginAsGuest}>{<FaUser className='user-logo' />}Login as Guest</button>
               <div className="login__divider">
                 <div className='login__line'></div>
                 <span>or</span>

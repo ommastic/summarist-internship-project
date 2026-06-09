@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import { BsStarFill } from 'react-icons/bs';
+import Login from './Login';
 
 export default function Reviews() {
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
   return (
     <section id="reviews">
       <div className="row">
@@ -63,7 +67,8 @@ export default function Reviews() {
             </div>
           </div>
           <div className="reviews__btn--wrapper">
-            <button className="btn home__cta--btn">Login</button>
+            {isLoginOpen && <Login setIsLoginOpen={setIsLoginOpen} />}
+            <button className="btn home__cta--btn" onClick={() => setIsLoginOpen(true)}>Login</button>
           </div>
         </div>
       </div>

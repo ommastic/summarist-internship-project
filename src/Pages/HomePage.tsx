@@ -8,11 +8,11 @@ import './HomePage.css';
 
 
 
-export default function HomePage() {
+export default function HomePage({isLoginOpen, setIsLoginOpen}: {isLoginOpen: boolean, setIsLoginOpen: React.Dispatch<React.SetStateAction<boolean>>}) {
   return (
     <>
-      <Header />
-      <Landing />
+      <Header isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
+      <Landing isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
       <Features />
       <Reviews />
       <Rating />  

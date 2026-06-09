@@ -1,10 +1,13 @@
 
 import logo from '../../assets/logo.png';
-import {  useState } from 'react';
 import Login from './Login';
 
-export default function Header() {
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
+type HeaderProps = {
+  isLoginOpen: boolean;
+  setIsLoginOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function Header({isLoginOpen, setIsLoginOpen}: HeaderProps) {
 
   return (
     <nav className="nav">
