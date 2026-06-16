@@ -1,14 +1,28 @@
 .track-info__container{
   display: flex;
+  align-items: center;
+  gap: 12px;
+
 }
 
-.track-info__album-art{
-  width: 48px;
+.track-info__album-art img{
   height: 48px;
+  width: 48px;
+  object-fit: cover;
+}
+.title--author{
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.track-info__title{
+  color: white;
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 
-.image{
-  width: 48px;
-  height: 48px;
-  overflow: clip;
+.track-info__author{
+  color: rgb(186, 200, 206);
+  font-size: 14px;
 }

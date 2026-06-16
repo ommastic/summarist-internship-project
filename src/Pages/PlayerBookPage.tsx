@@ -1,6 +1,7 @@
 import Sidebar from '../components/Sidebar.tsx';
 import SearchBar from '../components/Searchbar.tsx';
 import BookDetails from '../components/BookDetails.tsx';
+import './PlayerBookPage.css'
 import AudioPlayer from '../components/audioFiles/AudioPlayer.tsx';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -40,9 +41,7 @@ export default function PlayerBookPage({setIsLoginOpen}: PlayerBookPageProps) {
              <BookDetails book={book}/>
            </main>
          </div>
-          <div className='audio__content'>
-            <AudioPlayer book={book}/>
-          </div>
+        <AudioPlayer book={book}/>
     </div>
   )
 }

@@ -1,24 +1,27 @@
 import { FaPlay, FaPause } from "react-icons/fa";
 import { RiForward10Line } from "react-icons/ri";
 import { GrBackTen } from "react-icons/gr";
+import './Controls.css'
+
 
 type ControlsProps = {
   isPlaying: boolean;
-  setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>
+  toggleAudio: () => void;
+  skipForward: () => void;
+  skipBack: () => void
 };
 
 
-
-export default function Controls({ isPlaying, setIsPlaying }: ControlsProps) {
+export default function Controls({ isPlaying, toggleAudio, skipForward, skipBack }: ControlsProps) {
   return (
-    <div className="controls__bar">
-      <button><GrBackTen /></button>
+    <div className="control__buttons">
+      <button><GrBackTen className='control__button' onClick={skipBack}/></button>
 
-      <button onClick={() => setIsPlaying(!isPlaying)}>
+      <button className="toggle__button control__button" onClick={toggleAudio}>
         {isPlaying ? <FaPause /> : <FaPlay />}
       </button>
 
-      <button><RiForward10Line /></button>
+      <button ><RiForward10Line className='control__button' onClick={skipForward}/></button>
     </div>
   );
 }

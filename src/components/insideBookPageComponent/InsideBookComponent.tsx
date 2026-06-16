@@ -17,7 +17,11 @@ export default function InsideBookPage() {
     const { id } = useParams();
     const navigate = useNavigate();
     const [book, setBook] = useState<Book | null>(null);
-    const [isLoginOpen, setIsLoginOpen] = useState(false);  
+    const [isLoginOpen, setIsLoginOpen] = useState(false); 
+    
+    const addToLibrary = () => {
+        
+    }
 
     const handleReadOrListen = () => {
         if (!book) return;
@@ -93,7 +97,7 @@ export default function InsideBookPage() {
                                 {isLoginOpen && <Login setIsLoginOpen={setIsLoginOpen} />}
                             </div>
                         </div>
-                        <p className='inside-book--note'><FaRegBookmark className='bookmark-logo' />Add title to My Library</p>
+                        <p className='inside-book--note'><FaRegBookmark className='bookmark-logo' onClick={addToLibrary}/>Add title to My Library</p>
                         <p className='inside-book__description'>What's it about?</p>
                         <div className='inside-book__description--details'>
                             {book.tags.map((tag, index) => (<div key={index} className='inside-book-tags'>{tag}</div>))}

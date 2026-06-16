@@ -11,16 +11,19 @@ type InsideBookPageProps = {
 export default function InsideBookPage({setIsLoginOpen}: InsideBookPageProps) {
   return(
     <div className='selected-for-you__page'>
-          <Sidebar setIsLoginOpen={setIsLoginOpen} />
-          <div className='main__content'>
-            <header className='row search-with-main__content'>
+      <div>
+         <Sidebar setIsLoginOpen={setIsLoginOpen} />
+      </div>
+       
+        <div className='main__content'>
+          <header className='row search-with-main__content'>
             <SearchBar />
-            </header>
+          </header>
             
-            <main className='row for-you__wrapper'>
-              <InsideBookComponent />
-            </main>
-          </div>
+          <main className='row for-you__wrapper'>
+            <InsideBookComponent />
+          </main>
         </div>
+      </div>
    );
 }
