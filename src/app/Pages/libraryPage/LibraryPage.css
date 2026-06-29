@@ -1,0 +1,41 @@
+
+.library__books--wrapper{
+  padding: 40px 0;
+  margin-bottom: 32px;
+}
+
+.library__section--title{
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+
+}
+
+.total__books{
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.zero-book__wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: rgb(241, 246, 244);
+  padding: 32px;
+  margin: 0 auto;
+  max-width: fit-content;
+}
+
+.zero-book__title{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.zero-book__subtitle{
+  font-size: 16px;
+
+}

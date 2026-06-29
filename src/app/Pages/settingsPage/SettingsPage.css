@@ -1,0 +1,33 @@
+
+.settings__wrapper{
+  padding: 40px;
+}
+
+.settings__divider{
+  width: 100%;
+  border-bottom: 1px solid rgb(225, 231, 234);
+  margin-bottom: 32px;
+}
+.settings__main--page{
+  font-size: 32px;
+  font-weight: 700;
+  padding-bottom: 16px;
+
+}
+
+.settings__sub-topic{
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.upgrade__button{
+  font-size: 16px;
+  height: 40px;
+  background-color: rgb(43, 217, 124);
+  border-radius: 4px;
+  min-width: 180px;
+  width: 180px;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}

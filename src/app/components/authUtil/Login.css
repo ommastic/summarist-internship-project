@@ -1,0 +1,166 @@
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 9999;
+}
+.modal {
+  background-color: #fff;
+  width: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.modal__content {
+  position: relative;
+  background-color: #fff;
+  width: 400px;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.close__button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 28px;
+  color: #394547;
+  z-index: 9999;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.close-button--logo{
+  height: 28px;
+  width: 28px;
+  font-weight: bold;
+}
+
+.login__title {
+  font-size: 20px;
+  color: #032b41;
+  font-weight: 700;
+  margin: 30px 0 12px 0;
+  text-align: center;
+}
+.guest__button,
+.google__button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 200ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+}
+.guest__button {
+  background-color: rgb(58, 87, 157);
+  position: relative;
+}
+
+.user-logo {
+  margin-right: 8px;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  font-size: 22px;
+  transform: translateY(-50%);    
+} 
+
+.google__button {
+  position: relative;
+  background-color: rgb(66, 133, 244);
+}
+
+.google__logo {
+  position: absolute;
+  font-size: 20px;
+  left: 2px; 
+  bottom: 2px;
+  top: 2px;
+  border-radius: 4px;
+  width: 36px;
+  padding: 4px;
+  background-color: #fff;
+}
+
+.login__divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.login__line {
+  flex: 1;
+  height: 1px;
+  background-color: rgb(186, 200, 206);
+  font-weight: 200;
+}
+
+.login__divider span {
+  color: #394547;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+  gap: 16px;
+}
+
+.login__form--input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(186, 200, 206);
+  border-radius: 4px;
+}
+
+.login__footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.forgot__password {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  font-weight: 300;
+  font-size: 14px;
+
+  color: rgb(66, 133, 244);
+}
+.signup__link {
+  text-align: center;
+  padding: 12px;
+  color: rgb(66, 133, 244);
+  background-color: rgb(241, 246, 244);
+  cursor: pointer;
+  font-size: 16px;
+  font-stretch: 100%;
+  font-weight: 300;
+  height: 40px;
+  width: 400px;
+}

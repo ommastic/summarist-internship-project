@@ -1,0 +1,30 @@
+.control__buttons{
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+}
+
+.control__button{
+  color: white;
+  height: 28px;
+  width: 28px;
+  cursor: pointer;
+}
+
+.toggle__button{
+  background-color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.playing-button{
+  font-size: 26px;
+  color: black;
+  border-radius: 10px;
+}
