@@ -7,7 +7,7 @@ import type { Book } from "../../types/Book";
 import { AudioDuration } from "../../components/audioFiles/AudioDuration";
 import { CiClock2 } from "react-icons/ci";
 import { FaRegStar } from "react-icons/fa";
-import type { LibraryProps } from "../props/AllProps";
+import type { LibraryProps } from "../props/AllPropsTypes";
 import { Link } from "react-router-dom";
 import './LibraryPage.css';
 

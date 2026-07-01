@@ -9,7 +9,7 @@ import { RiPlantFill } from "react-icons/ri";
 import './PlansPage.css';
 import { getCheckoutUrl } from "../account/stripePayment";
 import { getPremiumStatus } from "../account/getPremiumStatus";
-import type { MainProps } from "../props/AllProps";
+import type { MainProps } from "../props/AllPropsTypes";
 
 
 export default function ChoosePlan(props: MainProps) {

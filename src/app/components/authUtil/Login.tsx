@@ -8,7 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import { FirebaseError } from 'firebase/app';
 import { CloseButton } from './CloseButton';
 import { FaUser } from "react-icons/fa";
-import type { MainProps } from '../../Pages/props/AllProps';
+import Spinner from '../Spinner';
+import type { MainProps } from '../../Pages/props/AllPropsTypes';
+
 
 export default function Login(props: MainProps) {
 
@@ -20,11 +22,18 @@ export default function Login(props: MainProps) {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+
+  type LoadingButton = 'login' | 'signup' | 'google' | 'guest' | null;
+
+  const [loadingButton, setLoadingButton] = useState<LoadingButton>(null);
+
+
   const navigate = useNavigate();
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     try {
+      setLoadingButton('google');
       setErrorMessage('');
       await setPersistence(auth, browserLocalPersistence);
       await signInWithPopup(auth, provider);
@@ -34,10 +43,12 @@ export default function Login(props: MainProps) {
       console.log(error);
       setErrorMessage('Google sign in failed. Please try again.');
     }
+    setLoadingButton(null);
   };
 
   const login = async () => {
     try {
+      setLoadingButton('login');
       setErrorMessage('');
       await setPersistence(auth, browserLocalPersistence);
       await signInWithEmailAndPassword(auth, email, password);
@@ -45,6 +56,16 @@ export default function Login(props: MainProps) {
       navigate(props.redirectPath || "/for-you");
     } catch (error: unknown) {
       if (error instanceof FirebaseError) {
+        if (!email.trim()) {
+          setErrorMessage('Please enter your email address');
+          return;
+        }
+
+        if (!password.trim()) {
+          setErrorMessage('Please enter your password');
+          return;
+        }
+
         if (error.code === 'auth/wrong-password' || error.code === 'auth/invalid-email') {
           setErrorMessage('Incorrect email or password');
         } else if (error.code === 'auth/user-not-found') {
@@ -54,13 +75,16 @@ export default function Login(props: MainProps) {
         }
       }
     };
+    setLoadingButton(null);
   };
 
   const loginAsGuest = async () => {
+    setLoadingButton('guest');
     await setPersistence(auth, browserLocalPersistence);
     await signInAnonymously(auth);
     props.setIsLoginOpen(false);
     navigate(props.redirectPath || "/for-you");
+    setLoadingButton(null);
   };
 
   const signUp = async (event: React.SyntheticEvent) => {
@@ -89,16 +113,16 @@ export default function Login(props: MainProps) {
           <div className="modal__content">
             <CloseButton {...props} />
 
-            { mode === "login" && (
+            {mode === "login" && (
               <>
                 <p className='login__title'>Log in to Summarist</p>
-                <button className='guest__button' onClick={loginAsGuest}>{<FaUser className='user-logo' />}Login as Guest</button>
+                <button className='guest__button' onClick={loginAsGuest}>{<FaUser className='user-logo' />}{loadingButton === 'guest' ? <Spinner /> : 'Login as Guest'}</button>
                 <div className="login__divider">
                   <div className='login__line'></div>
                   <span>or</span>
                   <div className='login__line'></div>
                 </div>
-                <button className='google__button' onClick={signInWithGoogle}><img className="google__logo" src={google} alt="Google Logo" />Login with Google</button>
+                <button className='google__button' onClick={signInWithGoogle}><img className="google__logo" src={google} alt="Google Logo" />{loadingButton === 'google' ? <Spinner /> : 'Login with Google'}</button>
 
                 <div className="login__divider">
                   <div className='login__line'></div>
@@ -128,7 +152,7 @@ export default function Login(props: MainProps) {
                     autoComplete="current-password"
                   />
                   <button type="submit" className="btn login__form--btn">
-                    Login
+                    {loadingButton === 'login' ? <Spinner /> : 'Login'}
                   </button>
                 </form>
               </>
@@ -137,7 +161,7 @@ export default function Login(props: MainProps) {
             {mode === 'signup' && (
               <>
                 <p className='login__title'>Sign up for Summarist</p>
-                <button className='google__button' onClick={signInWithGoogle}><img className="google__logo" src={google} alt="Google Logo" />Sign up with Google</button>
+                <button className='google__button' onClick={signInWithGoogle}><img className="google__logo" src={google} alt="Google Logo" />{loadingButton === 'signup' ? <Spinner /> : 'Sign up with Google'}</button>
                 <div className="login__divider">
                   <div className='login__line'></div>
                   <span>or</span>

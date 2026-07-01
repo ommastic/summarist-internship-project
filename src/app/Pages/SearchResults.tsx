@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import type { SearchProps } from "./props/AllProps";
-import '../components/Searchbar.css'
+import type { SearchProps } from "./props/AllPropsTypes";
+import '../components/Searchbar.css';
 
 
 export default function SearchResults(props: SearchProps) {
@@ -17,9 +17,9 @@ export default function SearchResults(props: SearchProps) {
         <Link to={`/book/${book.id}`} key={book.id} className="search-book__detail" onClick={closeSearchModal}>
           <img className='search-book__image' src={book.imageLink} />
           <div>
-          <div className='search-book__title'>{book.title}</div>
-          <div className='search-book__author'>{book.author}</div>
-          <div className='search-book__audio-link'>{ }</div>
+            <div className='search-book__title'>{book.title}</div>
+            <div className='search-book__author'>{book.author}</div>
+            <div className='search-book__audio-link'>{ }</div>
           </div>
         </Link>
       ))}

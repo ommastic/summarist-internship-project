@@ -2,7 +2,7 @@ import Sidebar from "../../components/Sidebar";
 import Login from "../../components/authUtil/Login";
 import MainHeader from "../../components/MainHeader";
 import mainLogo from '../../assets/login.png';
-import type { InsideBookProps } from "../props/AllProps";
+import type { InsideBookProps } from "../props/AllPropsTypes";
 import './LibraryOtherPage.css';
 
 

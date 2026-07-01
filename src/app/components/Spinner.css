@@ -1,5 +1,7 @@
 .spinner{
   animation: spin 1s linear infinite;
+  font-size: 20px;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {

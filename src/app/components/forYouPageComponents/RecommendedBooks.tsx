@@ -24,8 +24,29 @@ export default function RecommendedBooks() {
     fetchBook();
   }, []);
 
-  if (!books) {
-    return <p>Loading...</p>;
+  if (books?.length === 0) {
+    return (
+      <>
+        {
+          Array.from({ length: 5 }).map((_, index) => (
+            <div key={index} className='recommended-book__wrapper'>
+              <div className='recommended__book skeleton-card'>
+
+                <img className='skeleton__image' />
+                <div className='skeleton__title'></div>
+                <div className='skeleton__author'></div>
+                <div className='skeleton__sub-title'></div>
+
+                <div className="sleleton__bottom">
+                  <div className='skeleton__audio-link'></div>
+                  <div className='skeleton__rating'></div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </>
+    );
   };
 
   return (
@@ -33,7 +54,7 @@ export default function RecommendedBooks() {
       <div className="recommended__title">Recommended For You</div>
       <p className='recommended__sub-title'>We think you'll like these</p>
       <div className="recommended-grid">
-        {books.slice(0, 5).map((book) => (
+        {books?.slice(0, 5).map((book) => (
           <div key={book.id} className='recommended-book__wrapper'>
             <Link to={`/book/${book.id}`} className='recommended-book'>
               <div className='recommended__book--section'>

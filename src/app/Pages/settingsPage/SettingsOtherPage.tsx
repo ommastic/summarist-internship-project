@@ -3,7 +3,7 @@ import Login from "../../components/authUtil/Login";
 import MainHeader from "../../components/MainHeader";
 import mainLogo from '../../assets/login.png';
 import '../libraryPage/LibraryOtherPage.css';
-import type { InsideBookProps } from "../props/AllProps";
+import type { InsideBookProps } from "../props/AllPropsTypes";
 
 
 export default function SettingsOtherPage(props: InsideBookProps) {

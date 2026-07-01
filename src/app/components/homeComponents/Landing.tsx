@@ -1,5 +1,5 @@
 import landing from '../../assets/landing.png';
-import type { MainProps } from '../../Pages/props/AllProps';
+import type { MainProps } from '../../Pages/props/AllPropsTypes';
 
 
 export default function Landing(props: MainProps) {

@@ -2,7 +2,7 @@ import Sidebar from "../../components/Sidebar";
 import Login from "../../components/authUtil/Login";
 import MainHeader from "../../components/MainHeader";
 import mainLogo from '../../assets/login.png';
-import type { InsideBookPageProps} from "../props/AllProps";
+import type { InsideBookPageProps } from "../props/AllPropsTypes";
 import '../libraryPage/LibraryOtherPage.css';
 
 export default function InsideBookOtherPage(props: InsideBookPageProps) {
@@ -16,7 +16,7 @@ export default function InsideBookOtherPage(props: InsideBookPageProps) {
       <Sidebar {...props} />
       {props.isLoginOpen && <Login {...props} />}
       <div className='main__content'>
-        <MainHeader {...props}/>
+        <MainHeader {...props} />
 
         <div className="row">
           <div className='library-other-page__wrapper'>

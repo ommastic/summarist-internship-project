@@ -5,7 +5,7 @@ import type { Book } from "../../types/Book";
 import axios from "axios";
 import InsideBookPage from "./InsideBookPage";
 import InsideBookOtherPage from "./InsideBookOtherPage";
-import type { InsideBookProps } from "../props/AllProps";
+import type { InsideBookProps } from "../props/AllPropsTypes";
 
 export default function InsideBookPageWrapper(
   props: InsideBookProps) {

@@ -3,7 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import MainHeader from "../../components/MainHeader";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../../firebase";
-import type { SettingsProp } from "../props/AllProps";
+import type { SettingsProp } from "../props/AllPropsTypes";
 import { getPremiumStatus } from "../account/getPremiumStatus";
 import './SettingsPage.css';
 import { useState, useEffect } from "react";
@@ -43,14 +43,14 @@ export default function SettingsPage(props: SettingsProp) {
           <div className="settings__divider"></div>
           <div className='settings__sub-topic'>Your Subscription plan</div>
 
-          { isPremium ? (
+          {isPremium ? (
             <div className='settings__info'>Premium</div>
           ) : (
             <>
               <div className='settings__info'>Basic</div>
               <button className='upgrade__button' onClick={handleSettings}>Upgrade to Premium</button>
             </>
-            )
+          )
           }
 
           <div className="settings__divider"></div>

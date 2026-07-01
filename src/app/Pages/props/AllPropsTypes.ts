@@ -45,3 +45,8 @@ export type SettingsProp = LibraryProps & {
 export type CloseButtonProps = {
   setIsLoginOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+export type LoadingProps = {
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}

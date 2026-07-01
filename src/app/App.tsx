@@ -15,6 +15,7 @@ import { onAuthStateChanged, type User } from 'firebase/auth';
 import Login from './components/authUtil/Login';
 import InsideBookPageWrapper from './Pages/insideBookPage/InsideBookPageWrapper';
 
+
 export default function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [user, setUser] = useState<User | null>(null);
@@ -22,6 +23,32 @@ export default function App() {
   const [searchResults, setSearchResults] = useState<Book[]>([]);
   const [redirectPath, setRedirectPath] = useState("/for-you");
 
+  const sharedProps = {
+    isLoginOpen,
+    setIsLoginOpen,
+    search,
+    setSearch,
+    searchResults,
+    setSearchResults,
+    redirectPath,
+    setRedirectPath,
+    user
+  };
+
+  const mainProps = {
+    isLoginOpen,
+    setIsLoginOpen,
+    redirectPath
+  };
+
+  const settingsProps = {
+    setIsLoginOpen,
+    search,
+    setSearch,
+    searchResults,
+    setSearchResults,
+    user
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => setUser(currentUser));
@@ -32,37 +59,32 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} redirectPath={redirectPath} />} />
+        <Route path="/" element={<HomePage {...mainProps} />} />
 
-        <Route path="/for-you" element={<ForYouPage isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} search={search} searchResults={searchResults} setSearch={setSearch} setSearchResults={setSearchResults} redirectPath={redirectPath} />} />
+        <Route path="/for-you" element={<ForYouPage {...sharedProps} />} />
 
-        <Route path='/login' element={<Login setIsLoginOpen={setIsLoginOpen} redirectPath={redirectPath} isLoginOpen={isLoginOpen}/>} />
+        <Route path='/login' element={<Login {...mainProps} />} />
 
         <Route path='/library' element={
           user ? (
-            <LibraryPage setIsLoginOpen={setIsLoginOpen} search={search} setSearch={setSearch} searchResults={searchResults} setSearchResults={setSearchResults} />
+            <LibraryPage {...sharedProps} />
           ) : (
-            <LibraryOtherPage isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} search={search} setSearch={setSearch} searchResults={searchResults} setSearchResults={setSearchResults} redirectPath={redirectPath} setRedirectPath={setRedirectPath} />
+            <LibraryOtherPage {...sharedProps} />
           )} />
 
         <Route path="/book/:id" element={
-          <InsideBookPageWrapper isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} search={search} setSearch={setSearch} searchResults={searchResults} setSearchResults={setSearchResults} redirectPath={redirectPath} setRedirectPath={setRedirectPath} />} />
+          <InsideBookPageWrapper {...sharedProps} />} />
 
-        <Route path="/player/:id" element={<PlayerBookPage setIsLoginOpen={setIsLoginOpen} search={search} setSearch={setSearch} searchResults={searchResults} setSearchResults={setSearchResults} />} />
+        <Route path="/player/:id" element={<PlayerBookPage {...sharedProps} />} />
 
-        <Route path='/choose-plans' element={<PlansPage isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} redirectPath={redirectPath} />} />
+        <Route path='/choose-plans' element={<PlansPage {...mainProps} />} />
 
         <Route path='/settings' element={
           user ? (
-            <SettingsPage setIsLoginOpen={setIsLoginOpen} search={search} setSearch={setSearch} searchResults={searchResults} setSearchResults={setSearchResults}
-              user={user} />
+            <SettingsPage {...settingsProps} />
           ) : (
-            <SettingsOtherPage isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} search={search} setSearch={setSearch} searchResults={searchResults} setSearchResults={setSearchResults} setRedirectPath={setRedirectPath} redirectPath={redirectPath} />
+            <SettingsOtherPage {...sharedProps} />
           )} />
-
-        <Route path='/search-result' />
-
-
       </Routes>
     </Router>
   );

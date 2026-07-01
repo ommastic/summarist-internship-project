@@ -11,7 +11,7 @@ import { doc, setDoc, deleteDoc, collection, onSnapshot } from "firebase/firesto
 import { auth, db } from "../../../firebase";
 import Login from "../authUtil/Login";
 import { getPremiumStatus } from "../../Pages/account/getPremiumStatus";
-import type { InsideBookPageProps } from "../../Pages/props/AllProps";
+import type { InsideBookPageProps } from "../../Pages/props/AllPropsTypes";
 import './InsideBookComponent.css';
 
 

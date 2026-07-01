@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import type { Book } from '../../types/Book.tsx';
-import type { LibraryProps } from '../props/AllProps.ts';
+import type { LibraryProps } from '../props/AllPropsTypes.ts';
 import axios from 'axios';
 
 
@@ -52,7 +52,7 @@ export default function PlayerBookPage(props: LibraryProps) {
         <MainHeader {...props} />
 
         <main className='row'>
-          <BookDetails book={book} fontSize={fontSize}  />
+          <BookDetails book={book} fontSize={fontSize} />
         </main>
       </div>
       <AudioPlayer book={book} />

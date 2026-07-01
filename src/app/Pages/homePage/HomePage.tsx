@@ -4,18 +4,18 @@ import HomeHeader from "../../components/homeComponents/HomeHeader";
 import Landing from "../../components/homeComponents/Landing";
 import Rating from "../../components/homeComponents/Rating";
 import Reviews from "../../components/homeComponents/Reviews";
-import type { MainProps } from "../props/AllProps";
+import type { MainProps } from "../props/AllPropsTypes";
 import './HomePage.css';
 
 
 export default function HomePage(props: MainProps) {
   return (
     <>
-      <HomeHeader {...props}/>
-      <Landing {...props}/>
+      <HomeHeader {...props} />
+      <Landing {...props} />
       <Features />
-      <Reviews {...props}/>
-      <Rating />  
+      <Reviews {...props} />
+      <Rating />
       <Footer />
     </>
   );

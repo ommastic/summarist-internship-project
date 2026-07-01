@@ -2,7 +2,7 @@ import Sidebar from '../../components/Sidebar';
 import MainHeader from '../../components/MainHeader';
 import '../forYouPage/ForYouPage.css';
 import InsideBookComponent from '../../components/insideBookPageComponent/InsideBookComponent';
-import type { InsideBookPageProps } from '../props/AllProps';
+import type { InsideBookPageProps } from '../props/AllPropsTypes';
 
 
 export default function InsideBookPage(props: InsideBookPageProps) {
@@ -13,7 +13,7 @@ export default function InsideBookPage(props: InsideBookPageProps) {
       </div>
 
       <div className='main__content'>
-        <MainHeader {...props}/>
+        <MainHeader {...props} />
 
         <main className='row for-you__wrapper'>
           <InsideBookComponent {...props} />

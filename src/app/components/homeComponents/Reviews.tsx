@@ -1,5 +1,5 @@
 import { BsStarFill } from 'react-icons/bs';
-import type { MainProps } from '../../Pages/props/AllProps';
+import type { MainProps } from '../../Pages/props/AllPropsTypes';
 
 export default function Reviews(props: MainProps) {
   return (
