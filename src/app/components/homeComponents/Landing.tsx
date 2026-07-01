@@ -1,5 +1,4 @@
 import landing from '../../assets/landing.png';
-import Login from '../authUtil/Login';
 import type { MainProps } from '../../Pages/props/AllProps';
 
 
@@ -22,7 +21,6 @@ export default function Landing(props: MainProps) {
                 <br className="remove--tablet" />
                 and even people who don’t like to read.
               </div>
-              {props.isLoginOpen && <Login setIsLoginOpen={props.setIsLoginOpen} redirectPath={props.redirectPath} />}
               <button className="btn home__cta--btn" onClick={() => props.setIsLoginOpen(true)}>Login</button>
             </div>
             <figure className="landing__image--mask">

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { type Book } from '../../types/Book';
 import { Link } from "react-router-dom";
 import { CiClock2 } from "react-icons/ci";
-import {AudioDuration} from "../../utils/AudioDuration";
+import { AudioDuration } from "../audioFiles/AudioDuration";
 import { FaRegStar } from "react-icons/fa6";
 import './RecommendedBooks.css';
 

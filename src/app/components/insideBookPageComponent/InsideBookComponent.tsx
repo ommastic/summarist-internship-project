@@ -4,7 +4,7 @@ import { type Book } from "../../types/Book";
 import { TbBulb } from "react-icons/tb";
 import { FaRegStar } from "react-icons/fa6";
 import { FaRegClock, FaRegBookmark, FaBookmark } from "react-icons/fa";
-import { AudioDuration } from "../../utils/AudioDuration";
+import { AudioDuration } from "../audioFiles/AudioDuration";
 import { HiOutlineMicrophone } from "react-icons/hi";
 import { SlBookOpen } from "react-icons/sl";
 import { doc, setDoc, deleteDoc, collection, onSnapshot } from "firebase/firestore";
@@ -62,7 +62,7 @@ export default function InsideBookPage(props: InsideBookPageProps) {
         }
 
         const isPremiumUser = await getPremiumStatus();
-        
+
         if (book.subscriptionRequired && !isPremiumUser) {
             navigate('/choose-plans');
             return;
@@ -77,7 +77,7 @@ export default function InsideBookPage(props: InsideBookPageProps) {
             {book && (
                 <div className='inside-book--section'>
                     <div>
-                        <div className='inside-book__title'>{book.title} { book.subscriptionRequired && "( Premium )" }</div>
+                        <div className='inside-book__title'>{book.title} {book.subscriptionRequired && "( Premium )"}</div>
                         <div className='inside-book__author'>{book.author}</div>
                         <div className='inside-book__sub-title'>{book.subTitle}</div>
                         <div className='inside-book--line'></div>

@@ -37,10 +37,10 @@ export default function PlayerBookPage(props: LibraryProps) {
 
     return (
       <div className='font-wrapper'>
-        <button className={fontSize === 14 ? 'active' : ''} onClick={() => setFontSize(14)}>Aa</button>
-        <button className={fontSize === 18 ? 'active' : ''} onClick={() => setFontSize(18)}>Aa</button>
-        <button className={fontSize === 20 ? 'active' : ''} onClick={() => setFontSize(20)}>Aa</button>
-        <button className={fontSize === 22 ? 'active' : ''} onClick={() => setFontSize(22)}>Aa</button>
+        <div className={`font-14 {fontSize === 14 ? 'active' : ''`} onClick={() => setFontSize(14)}>Aa</div>
+        <div className={`font-16 fontSize === 16 ? 'active' : ''`} onClick={() => setFontSize(16)}>Aa</div>
+        <div className={`font-20 fontSize === 20 ? 'active' : ''`} onClick={() => setFontSize(20)}>Aa</div>
+        <div className={`font-24 fontSize === 24 ? 'active' : ''`} onClick={() => setFontSize(24)}>Aa</div>
       </div>
     );
   };

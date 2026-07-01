@@ -9,7 +9,7 @@ type BookDetailsProps = {
 export default function BookDetails({book, fontSize}: BookDetailsProps) {
   return (
     <div className='book-details'>
-      <div className='book-title'>{book.title}</div>
+      <div className='book-title'>{book.title} {book.subscriptionRequired && '(Premium)'}</div>
       <div className='book-summary' style={{ fontSize: `${fontSize}px`}}>{book.summary}</div>
     </div>
   )

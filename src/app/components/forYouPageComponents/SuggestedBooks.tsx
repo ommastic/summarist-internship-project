@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { type Book } from "../../types/Book";
 import axios from "axios";
-import { AudioDuration } from "../../utils/AudioDuration";
+import { AudioDuration } from "../audioFiles/AudioDuration";
 import { CiClock2 } from "react-icons/ci";
 import { FaRegStar } from "react-icons/fa";
 import { Link } from "react-router-dom";

@@ -1,5 +1,4 @@
 import { BsStarFill } from 'react-icons/bs';
-import Login from '../authUtil/Login';
 import type { MainProps } from '../../Pages/props/AllProps';
 
 export default function Reviews(props: MainProps) {
@@ -65,7 +64,6 @@ export default function Reviews(props: MainProps) {
             </div>
           </div>
           <div className="reviews__btn--wrapper">
-            {props.isLoginOpen && <Login {...props}/>}
             <button className="btn home__cta--btn" onClick={() => props.setIsLoginOpen(true)}>Login</button>
           </div>
         </div>

@@ -10,7 +10,6 @@ import { CloseButton } from './CloseButton';
 import { FaUser } from "react-icons/fa";
 import type { MainProps } from '../../Pages/props/AllProps';
 
-
 export default function Login(props: MainProps) {
 
   type LoginMode = 'login' | 'signup' | 'forgot-password';
@@ -82,14 +81,15 @@ export default function Login(props: MainProps) {
     await login();
   };
 
+
   return (
-    <section id={mode}>
+    <section className='login-modal' data-mode={mode} >
       <div className="modal__overlay">
         <div className='modal'>
           <div className="modal__content">
-            <CloseButton {...props}/>
+            <CloseButton {...props} />
 
-            {mode === "login" && (
+            { mode === "login" && (
               <>
                 <p className='login__title'>Log in to Summarist</p>
                 <button className='guest__button' onClick={loginAsGuest}>{<FaUser className='user-logo' />}Login as Guest</button>
@@ -180,43 +180,35 @@ export default function Login(props: MainProps) {
                     autoComplete='email'
                   />
                   <button type="submit" className="btn login__form--btn">
-                    Send Reset Link
+                    Send Reset password Link
                   </button>
                 </form>
               </>
             )}
 
-            {errorMessage && (
-              <div className='error__message'>
-                <span>{errorMessage}</span>
-                <button type='button' onClick={() => setErrorMessage('')}>Close</button>
-              </div>
-            )}
-          </div>
+            <div className="login__footer">
+              {mode === "login" && (
+                <>
+                  <button className='forgot__password' onClick={() => setMode('forgot-password')}>Forgot your Password</button>
 
-          <div className="login__footer">
-            {mode === "login" && (
-              <>
-                <button className='forgot__password' onClick={() => setMode('forgot-password')}>Forgot your Password</button>
+                  <button className="signup__link" onClick={() => setMode('signup')}>
+                    Don't have an account?
+                  </button>
+                </>
+              )}
 
-                <button className="signup__link" onClick={() => setMode('signup')}>
-                  Don't have an account?
+              {mode === "signup" && (
+                <button type='button' className="signup__link" onClick={() => setMode('login')}>
+                  Already have an account?
                 </button>
+              )}
 
-              </>
-            )}
-
-            {mode === "signup" && (
-              <button type='button' className="signup__link" onClick={() => setMode('login')}>
-                Already have an account?
-              </button>
-            )}
-
-            {mode === "forgot-password" && (
-              <button type='button' className="signup__link" onClick={() => setMode('login')}>
-                Back to Login
-              </button>
-            )}
+              {mode === "forgot-password" && (
+                <button type='button' className="signup__link" onClick={() => setMode('login')}>
+                  Go to Login
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

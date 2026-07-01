@@ -11,6 +11,7 @@
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
+  transition: transform 0.3s ease-in-out;
 }
 
 .sidebar--with-player{
@@ -71,42 +72,7 @@
   color: rgb(3, 43, 65);
 }
 
-.font-wrapper{
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  height: 56px;
-  margin-left: 24px;
-  gap: 16px;
-}
-
-.font-wrapper button{
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.font-wrapper button:nth-child(1){
-  font-size: 14px;
-  padding-bottom: 4px;
-}
-
-.font-wrapper button:nth-child(2){
-  font-size: 18px;
-  padding-bottom: 4px;
-  
-}
-
-.font-wrapper button:nth-child(3){
-  font-size: 22px;
-  padding: 4px;
-}
-
-.font-wrapper button:nth-child(4){
-  font-size: 26px;
-  padding-bottom: 4px;
-}
-
-.font-wrapper button.active{
-  border-bottom: 3px solid rgb(43, 217, 124);
+.book__image.skeleton{
+  width: 140px;
+  height: 140px;
 }

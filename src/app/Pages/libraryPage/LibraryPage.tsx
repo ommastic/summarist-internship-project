@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { collection, onSnapshot } from "firebase/firestore";
 import { auth, db } from "../../../firebase";
 import type { Book } from "../../types/Book";
-import { AudioDuration } from "../../utils/AudioDuration";
+import { AudioDuration } from "../../components/audioFiles/AudioDuration";
 import { CiClock2 } from "react-icons/ci";
 import { FaRegStar } from "react-icons/fa";
 import type { LibraryProps } from "../props/AllProps";

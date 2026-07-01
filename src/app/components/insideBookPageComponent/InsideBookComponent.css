@@ -188,6 +188,24 @@ margin-right: 6px;
   margin-bottom: 16px;
 }
 
-@media max {
-  
+@media (max-width: 998px) {
+  .inside-book--section{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .inside-book__image{
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar{
+    transform: translateX(-100%);
+  }
+  .main__content{
+    width: 100%;
+    margin-left: 0;
+
+  }
 }
