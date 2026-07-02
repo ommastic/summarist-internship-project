@@ -24,24 +24,16 @@ export default function SelectedForYou() {
 
   if (!book) {
     return ( //skeleton
-    <div className='selected-book__wrapper'>
-      <p className="selected-for-you">Selected just for you</p>
-      
-        <div className='book__background'>
-          <div className='book__sub-title skeleton'></div>
-          <div className='book--line skeleton'></div>
+      <div className='selected-book__wrapper'>
+        <p className="selected-for-you">Selected just for you</p>
+        
+        <div className='skeleton__book__background'>
+          <div className='skeleton__sub-title skeleton'></div>
+          <div className='skeleton__line skeleton'></div>
+          <div className='skeleton__image skeleton'></div>
+          <div className='skeleton__book__title skeleton'></div>
         </div>
-        <div className='book--info'>
-          <div>
-           <div className='book__image skeleton'></div>
-          </div>
-          <div className='book__description'>
-            <div className='book__title skeleton'></div>
-            <div className='book__author skeleton' ></div>
-            <div className='book__audio-link skeleton'><FaCirclePlay className='play--button' /></div>
-          </div>
-        </div>
-    </div>
+      </div>
     );
   };
   return (

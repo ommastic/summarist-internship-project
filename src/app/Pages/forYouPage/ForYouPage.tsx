@@ -8,7 +8,6 @@ import './ForYouPage.css';
 import MainHeader from '../../components/MainHeader';
 
 export default function ForYouPage(props: ForYouProps) {
-
   return (
     <div className='selected-for-you__page'>
       <Sidebar {...props} />
