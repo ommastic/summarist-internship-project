@@ -57,7 +57,7 @@ export default function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/summarist-internship-project">
       <Routes>
         <Route path="/" element={<HomePage {...mainProps} />} />
 
