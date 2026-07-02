@@ -22,7 +22,7 @@ export default function ChoosePlan(props: MainProps) {
   useEffect(() => {
     const checkPremium = async () => {
       const newPremiumStatus = auth.currentUser
-        ? await getPremiumStatus(app)
+        ? await getPremiumStatus()
         : false;
       setIsPremium(newPremiumStatus);
     };
